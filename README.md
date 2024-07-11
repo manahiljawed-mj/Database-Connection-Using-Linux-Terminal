@@ -25,9 +25,11 @@ Create a new database (mydatabase) and a users table with some sample data:
 
 ```bash
 CREATE DATABASE mydatabase;
-
+```
+```bash
 \c mydatabase
-
+```
+```bash
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -35,7 +37,8 @@ CREATE TABLE users (
     email VARCHAR(100) UNIQUE NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+```
+```bash
 INSERT INTO users (username, password, email, created_at)
 VALUES ('john_doe', 'password123', 'john.doe@example.com', CURRENT_TIMESTAMP);
 ```
