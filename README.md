@@ -1,6 +1,7 @@
 # PostgreSQL Database Setup and Usage Guide 💻🔑📊
 
 This guide will help you set up a PostgreSQL database on your Linux machine and perform basic operations.
+This solution will also work in case where you cannot make direct connection with dbeaver or any other software. 
 
 ## Installation
 
@@ -78,7 +79,21 @@ GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;
 -- Revoke access from a user
 REVOKE ALL PRIVILEGES ON DATABASE mydatabase FROM public;
 ```
+## If You Cannot Make Direct Connections with DBeaver
 
+###If you encounter issues making direct connections with DBeaver, ensure you configure DBeaver to connect via TCP/IP:
+
+    Open DBeaver and create a new PostgreSQL connection.
+
+    Use the following connection settings:
+        Host: localhost (or your server IP)
+        Port: 5432 (default PostgreSQL port) //or try different ports which are not blocked
+        Database: mydatabase (or your database name)
+        Username: postgres (or your PostgreSQL username)
+        Password: Enter your PostgreSQL password
+
+    Ensure your PostgreSQL server (postgresql.service) is running and configured to accept remote connections if necessary.
+    
 ### Contributions
 
 Contributions and feedback are welcome! Please feel free to submit issues or pull requests.
